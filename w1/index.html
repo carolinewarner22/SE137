@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE137 W1</title>
+    <style>
+        .hide{
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">Caroline</div>
+    <div id="nav">
+        <a href="#">Bio</a>
+        <a href="#">Education</a>
+        <a href="#">Hobbies</a>
+    </div>
+    <div id="main">
+        <div id="bio">Bio</div>
+        <div id="education">Education</div>
+        <div id="hobbies">Hobbies</div>
+    </div>
+    <!--End of Main-->
+    <div id="footer">Footer</div>
+    <script>
+        var a = Array.from(document.querySelectorAll(`a`));
+
+        for(let i=0; i<a.length; i++)
+        {
+            a[i].addEventListener(`click`, hide)
+        }
+
+        function hide(e)
+        {
+            e.preventDefault();
+            var div = document.querySelectorAll(`#main div`)
+            for(let i=0; i<div.length; i++)
+            {
+                div[i].classList.add(`hide`);
+            }
+
+
+            div[a.indexof(e.target)].classList.remove(`hide`);
+        }
+    </script>
+</body>
+</html> 
