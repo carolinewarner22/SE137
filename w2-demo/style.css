@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+div {
+    color:red;
+}
+
+#div-1 {
+    color:green;
+}
+.blue {
+    color:blue;
+}
+a{
+    display:block;
+    padding:12px;
+    font-weight:bold;
+    color:aliceblue;
+}
+a:link, a:visited {
+    background-color: black;
+}
+a:hover, a:active {
+    background-color: #666;
+}
