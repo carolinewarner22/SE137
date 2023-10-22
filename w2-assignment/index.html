@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Caroline Warner">
+    <meta name="description" content="Week 2 Assignment">
+    <title>Week 2 Assignment</title>
+</head>
+<body>
+    <h1>Caroline Warner</h1>
+
+    <hr>
+
+    <div id="nav">
+        <a href="#">Bio</a>
+        <a href="#">Education</a>
+        <a href="#">Hobbies</a>
+    </div>
+
+    <hr>
+
+    <div id="main">
+
+        <div id="bio">
+            <h2 class="magentatext">My Bio</h2>
+            <img src="images/caroline.jpg" alt="picture of me">
+            <p>Hi! My name is Caroline, and I am studying Software Engineering and Web Development at New England Tech. I am 19 years old and graduated high school in June of 2022. I grew up and still live in Newport, RI. I have had a strong passion for technology since I was seven. I always knew I wanted to pursue technology as a career, but I didn't decide on software engineering until I was 14. I enrolled in the Academy of Information Technology (AOIT) as a freshman, where I learned coding in a classroom environment instead of at home by myself. That year, I participated in SkillsUSA RI in the Technical Computer Applications category and received a bronze medal as a freshman, going up against seniors. The following year, the competition was canceled because of COVID.</p>
+
+            <p>Aside from my interest in technology, I like sports and video games. I started playing softball when I was ten and joined a travel team two years later. I was a centerfielder, second-baseman, and switch hitter. I also played tennis for a couple of years. Baseball is my favorite sport to watch on TV. I've played video games for over a decade and enjoy first-person shooter games the most. My favorite games right now are Valorant and CS2. </p>
+        </div>
+
+        <div id="ed" class="hide">
+            <h2 class="magentatext">Schooling</h2>
+            <ul>
+                <li>William S. Rogers High School <i>(2018-2020)</i></li>
+                <li>The Prout School <i>(2020-2021)</i></li>
+                <li>Rhode Island Connections Academy <i>(2021-2022)</i></li>
+                <li><a href="https://www.neit.edu/" target="_blank">New England Institute of Technology <i>(2023-)</i></a></li>
+            </ul> 
+        </div>
+
+        <div id="hobbies" class="hide">
+            <h2 class="magentatext">Hobbies</h2>
+            <ol>
+                <li>Reading</li>
+                <li>Watching Movies</li>
+                <li>Taking Pictures</li>
+                <li>Going for Walks</li>
+                <li>Playing Video Games</li>
+                <li>Hanging Out With Friends</li>
+            </ol>
+            <img src="images/cliffwalk.jpg" alt="picture that I took from the cliff walk">
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div id="footer">
+        <p>©2023 Caroline Warner | W1 Assignment</p>
+    </div>
+
+    <script>
+        var a = Array.from(document.querySelectorAll(`a`));
+
+        for(let i=0; i<a.length; i++)
+        {
+            a[i].addEventListener(`click`, hide)
+        }
+
+        function hide(e)
+        {
+            e.preventDefault();
+
+            var div = document.querySelectorAll(`#main div`)
+        
+            for(let i=0; i<div.length; i++)
+            {
+                div[i].classList.add(`hide`);
+            }
+        
+            div[a.indexOf(e.target)].classList.remove(`hide`);
+        }
+    </script>
+</body>
+</html>
