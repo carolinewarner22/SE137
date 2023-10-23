@@ -94,6 +94,9 @@ h2 {
     color: #975145;
     text-decoration: none;
 }
+#ed a:visited {
+    color: #3B261D;
+}
 /* HOBBIES */
 
 #hobbies {
