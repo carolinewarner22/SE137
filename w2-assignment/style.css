@@ -1,0 +1,126 @@
+body {
+    background-color: #808080;
+}
+h1 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #975145;
+    padding: 2px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+.hide {
+    display: none;
+}
+/* MENU BAR */
+
+#nav {
+    text-align: center;
+    border: 2px solid white;
+    padding: 5px 0px;
+    margin: 2px;
+    background-color: #975145;
+}
+
+#nav a:link {
+    display: inline-block;
+    padding: 24px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+#nav a:hover {
+    background-color: white;
+    color: #3B261D;
+}
+#nav a:visited {
+    color: #3B261D;
+}
+
+/* BIO */
+
+#bio {
+    display: flex;
+    align-items: flex-start;
+    border: 2px solid white;
+    margin: 2px;
+    background-color: white;
+}
+.text p {
+    font-size: 1.25vw;
+    font-family: 'Montserrat', sans-serif;
+    margin: 2px;
+    padding: 2px;
+    line-height: 1.5;
+}
+  
+.text, .image {
+    flex: 1;
+    min-width: 0;
+}
+
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* EDUCATION */
+
+#ed {
+    border: 2px solid white;
+    margin: 2px;
+    background-color: white;
+}
+#ed ul {
+    font-size: 1.25vw;
+    font-family: 'Montserrat',sans-serif;
+    margin: 2px;
+    padding: 2.25em;
+    line-height: 2;
+    letter-spacing:1px;
+}
+#ed a:link {
+    color: #3B261D;
+    text-decoration: none;
+}
+#ed a:hover {
+    color: #975145;
+    text-decoration: none;
+}
+/* HOBBIES */
+
+#hobbies {
+    display: flex;
+    align-items: flex-start;
+    border: 2px solid white;
+    margin: 2px;
+    background-color: white;
+}
+.text ol {
+    font-size: 1.25vw;
+    font-family: 'Montserrat', sans-serif;
+    margin: 2px;
+    padding: 2.25em;
+    line-height: 2;
+    letter-spacing:1px;
+}
+  
+/* FOOTER */
+
+#footer {
+    background: rgb(151,81,69);
+    background: linear-gradient(90deg, rgba(151,81,69,1) 0%, rgba(59,38,29,1) 50%, rgba(151,81,69,1) 100%);
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    padding: 15px 0px;
+    margin: 2px;
+}
