@@ -15,9 +15,9 @@
     <h1>Caroline Warner</h1>
 
     <div id="nav">
-        <a href="#">Bio</a>
-        <a href="#">Education</a>
-        <a href="#">Hobbies</a>
+        <a href="#bio">Bio</a>
+        <a href="#ed">Education</a>
+        <a href="#hobbies">Hobbies</a>
     </div>
 
     <div id="main">
@@ -35,7 +35,7 @@
           </div>
 
 
-        <div id="ed" class="hide">
+        <div id="ed">   <!--removed hide class because js takes care of it now-->
             <h2>Schooling</h2>
             <ul>
                 <li>William S. Rogers High School <i>(2018-2020)</i></li>
@@ -45,7 +45,7 @@
             </ul> 
         </div>
 
-        <div id="hobbies" class="hide">
+        <div id="hobbies">  <!--removed hide class because js takes care of it now-->
             <div class="image">
                 <img src="images/cliffwalk.jpg" alt="picture that I took from the cliff walk">
             </div>
@@ -73,29 +73,50 @@
         <p>©2023 Caroline Warner | W2 Assignment</p>
     </div>
 
+    <!--had to chnage the JS code for the links to work properly ... added some documentation-->
     <script>
+        document.addEventListener('DOMContentLoaded', function() {  //won't run until content is loaded
+            var divs = document.querySelectorAll('#main div');  //ALL divs inside of #main
 
-        var a = Array.from(document.querySelectorAll(`a`));
-
-        for(let i=0; i<a.length; i++)
-        {
-            a[i].addEventListener(`click`, hide)
-        }
-
-        function hide(e)
-        {
-            e.preventDefault();
-
-            var div = document.querySelectorAll(`#main div`)
-
-            for(let i=0; i<div.length; i++)
-            {
-                div[i].classList.add(`hide`);
+            function showDiv(divId) {
+                
+                //looping through each div, applying the 'hide' class
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].classList.add('hide');
+                    var nestedDivs = divs[i].querySelectorAll('div');
+                    for (let j = 0; j < nestedDivs.length; j++) {   //including any divs that might be nested inside of our three main divs (included this for the bio and hobbies divs)
+                        nestedDivs[j].classList.add('hide');
+                    }
+                }
+                
+                document.querySelector(divId).classList.remove('hide');
+                var nestedDivs = document.querySelector(divId).querySelectorAll('div');
+                for (let i = 0; i < nestedDivs.length; i++) {
+                    nestedDivs[i].classList.remove('hide');
+                }
             }
+            //when clicked, corresponding divs will be hidden/shown... the function is called showDiv(#whatever id)... the id is brought up to the function 
+            document.querySelector('#nav a:nth-child(1)').addEventListener('click', function(e) {   //inside of NAV DIV... the first a tag (a:nth-child(1)) ... I specified nav div because I have another link to the NEIT school page and didn't want it to be affected
+                e.preventDefault();
+                showDiv('#bio');
+            });
 
-            div[a.indexOf(e.target)].classList.remove(`hide`);
-        }
-        
+            document.querySelector('#nav a:nth-child(2)').addEventListener('click', function(e) {
+                e.preventDefault();
+                showDiv('#ed');
+            });
+
+            document.querySelector('#nav a:nth-child(3)').addEventListener('click', function(e) {
+                e.preventDefault();
+                showDiv('#hobbies');
+            });
+
+            showDiv('#bio');    //default, when page opens
+
+        });
+
+
+
     </script>
 </body>
 </html>
