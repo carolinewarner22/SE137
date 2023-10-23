@@ -27,7 +27,7 @@ h2 {
     background-color: #975145;
 }
 
-#nav a:link {
+#nav a:link, #nav a:visited {
     display: inline-block;
     padding: 24px;
     color: white;
@@ -37,9 +37,6 @@ h2 {
 }
 #nav a:hover {
     background-color: white;
-    color: #3B261D;
-}
-#nav a:visited {
     color: #3B261D;
 }
 
@@ -86,16 +83,13 @@ h2 {
     line-height: 2;
     letter-spacing:1px;
 }
-#ed a:link {
+#ed a:link, #ed a:visited {
     color: #3B261D;
     text-decoration: none;
 }
 #ed a:hover {
     color: #975145;
     text-decoration: none;
-}
-#ed a:visited {
-    color: #3B261D;
 }
 /* HOBBIES */
 
