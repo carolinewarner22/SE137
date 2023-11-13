@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="bobo">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </nav>
+    <p>bread >> crumb >> tab <span></span></p>
+    <script>
+        var a = document.querySelectorAll(`nav a`);
+        console.log(a)
+
+        for(let i=0; i<a.length; i++)
+        a[i].addEventListener(`click`,hilite)
+
+        function hilite(e)
+        {
+            for(let i=0; i<a.length; i++){
+                
+            }
+            e.target.style.backgroundColor="black";
+
+        }
+    </script>
+
+</body>
+</html> 
