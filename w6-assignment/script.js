@@ -224,23 +224,49 @@ for(let i=0; i<tabs.length; i++)
         document.querySelectorAll(`#breadcrumbs a`)[3].innerHTML = `Tabs ${i+1}`
     });
 }
-document.addEventListener('DOMContentLoaded', function() {
-    var iconDiv = document.getElementById('signal');
-    var icons = iconDiv.querySelectorAll('i');
-  
-    iconDiv.addEventListener('mouseenter', function() {
-      icons.forEach(function(icon) {
-        icon.style.display = 'none';
-      });
-      icons[1].style.display = 'inline-block';
+
+  iconDiv.addEventListener('mouseenter', function() {
+    icons.forEach(function(icon) {
+      icon.style.display = 'none';
     });
-  
-    iconDiv.addEventListener('mouseleave', function() {
-      icons.forEach(function(icon) {
-        icon.style.display = 'none';
-      });
-      icons[0].style.display = 'inline-block';
-    });
+    icons[1].style.display = 'inline-block';
   });
 
+  iconDiv.addEventListener('mouseleave', function() {
+    icons.forEach(function(icon) {
+      icon.style.display = 'none';
+    });
+    icons[0].style.display = 'inline-block';
+  });
+  
+  const testContainers = document.querySelectorAll('.test');
+
+  testContainers.forEach(container => {
+    container.addEventListener('mouseenter', function() {
+      const solidIcons = container.querySelectorAll('.fa-solid');
+      const lightIcons = container.querySelectorAll('.fa-light');
+  
+      solidIcons.forEach(icon => {
+        icon.style.display = 'none';
+      });
+  
+      lightIcons.forEach(icon => {
+        icon.style.display = 'inline';
+      });
+    });
+  
+    container.addEventListener('mouseleave', function() {
+      const solidIcons = container.querySelectorAll('.fa-solid');
+      const lightIcons = container.querySelectorAll('.fa-light');
+  
+      solidIcons.forEach(icon => {
+        icon.style.display = 'inline';
+      });
+  
+      lightIcons.forEach(icon => {
+        icon.style.display = 'none';
+      });
+    });
+  });
+  
 

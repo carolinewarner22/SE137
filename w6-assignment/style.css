@@ -136,13 +136,6 @@ summary a:hover, summary a:active {
             background-color: #373737;
             color: #FFFFFF;
         }
-        #tabs a > i:first-child {
-            margin-right: auto; /* Pushes the first icon and text to the left */
-        }
-        
-        #tabs a > i:last-child {
-            margin-left: auto; /* Pushes the last icon to the right */
-        }
     #breadcrumbs{
         background-color: #161616;
         font-size: 12px; 
